@@ -1,0 +1,43 @@
+// Definiere Breakpoint-Werte als Variablen
+$breakpoints: (
+    "mobile-small": 570px,
+    "mobile": 780px,
+    "tablet": 990px,
+    "desktop": 1200px,
+    "desktop-large": 1400px
+);
+
+@mixin breakpoint($point) {
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @if $point ==$breakpoint {
+            @media (max-width: $breakpoint-value) {
+                @content;
+            }
+        }
+    }
+}
+
+// @include dFlex($jc: null, $ai: null, $fd: null, $fw: null, $g: null);
+@mixin dFlex($jc: null, $ai: null, $fd: null, $fw: null, $g: null) {
+    display: flex;
+
+    @if $jc !=null {
+        justify-content: $jc;
+    }
+
+    @if $ai !=null {
+        align-items: $ai;
+    }
+
+    @if $fd !=null {
+        flex-direction: $fd;
+    }
+
+    @if $fw !=null {
+        flex-wrap: $fw;
+    }
+
+    @if $g !=null {
+        gap: $g;
+    }
+}

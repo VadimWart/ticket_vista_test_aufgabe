@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketVista</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>TicketVista</h1>
+            <div class="user-profile">
+                <img src="assets/images/userM.png" alt="Benutzerprofil">
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar container">
+        <nav>
+            <ul class="button-container">
+                <div class="left-button">
+                    <li><button id="myTickets">Meine Tickets</button></li>
+                    <li><button id="savedViews">Gespeicherte Ansichten</button></li>
+                </div>
+                <a class="right-button" href="#">Aktuelle Ansicht speichern</a>
+            </ul>
+
+        </nav>
+        <section class="ticket-filter">
+            <input type="text" placeholder="Ticket suchen...">
+            <div class="filter-options">
+                <select class="abteilung">
+                    <option value="alle">Alle Abteilungen</option>
+                    <option value="it">IT Abteilung</option>
+                    <option value="hr">HR Abteilung</option>
+                </select>
+
+                <select class="status">
+                    <option value="alle">Alle Status</option>
+                    <option value="offen">Offen</option>
+                    <option value="in_bearbeitung">In Bearbeitung</option>
+                </select>
+
+                <select class="prioritaet">
+                    <option value="alle">Alle Prioritäten</option>
+                    <option value="hoch">Hoch</option>
+                    <option value="mittel">Mittel</option>
+                    <option value="niedrig">Niedrig</option>
+                </select>
+
+                <button class="filter-button">Filter anwenden</button>
+            </div>
+        </section>
+    </aside>
+
+    <main>
+        <div class="container">
+
+
+            <section class="ticket-list">
+                <div class="department">
+                    <div id="headerItDepartment">
+                        <div class="departament-text-left">
+                            <h2>IT Abteilung </h2>
+                            <span id="isItTickets">12 Tickets</span>
+                        </div>
+                        <div class="ticket-count">8 Offen, 4 in Bearbeitung</div>
+                    </div>
+                    <div class="tickets-container">
+                        <table class="ticket-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox"></th>
+                                    <th>TICKETNUMMER</th>
+                                    <th>BETREFF</th>
+                                    <th>KUNDE</th>
+                                    <th>PRIORITÄT</th>
+                                    <th>STATUS</th>
+                                    <th>DATUM</th>
+                                    <th>ZUGEWIESEN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>#HR-2025</td>
+                                    <td>Server Neustart erforderlich</td>
+                                    <td>Musterfirma GmbH</td>
+                                    <td><span class="red-span">Hoch</span></td>
+                                    <td><span class="orange-span">In Bearbeitung</span></td>
+                                    <td>15.03.2025</td>
+                                    <td class="ticket-assigned"><img src="assets/images/userM.png" alt="Zugewiesen an">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="department">
+                    <div id="headerHrDepartment">
+                        <div class="departament-text-left">
+                            <h2>HR Abteilung </h2>
+                            <span id="isHrTickets" class="green-span">8 Tickets</span>
+                        </div>
+                        <div class="ticket-count">5 Offen, 3 in Bearbeitung</div>
+                    </div>
+                    <div class="tickets-container">
+                        <table class="ticket-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox"></th>
+                                    <th>TICKETNUMMER</th>
+                                    <th>BETREFF</th>
+                                    <th>KUNDE</th>
+                                    <th>PRIORITÄT</th>
+                                    <th>STATUS</th>
+                                    <th>DATUM</th>
+                                    <th>ZUGEWIESEN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>#HR-1001</td>
+                                    <td>Bewerbungsunterlagen prüfen</td>
+                                    <td>Max Mustermann</td>
+                                    <td><span class="green-span">Niedrig</span></td>
+                                    <td><span class="green-span">Offen</span></td>
+                                    <td>13.03.2025</td>
+                                    <td class="ticket-assigned"><img src="assets/images/userW.png" alt="Zugewiesen an">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
